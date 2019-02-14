@@ -1,0 +1,16 @@
+{
+    "test":{
+        "username": "sa",
+        "password": "sa",
+        "database": "P12R17",
+        "host": "10.0.4.3",
+        "dialect": "mssql"
+    },
+    "production": {
+        "username": "gestor",
+        "password": "gestor@123",
+        "database": "coleta_total",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "test":{
+        "username": "sa",
+        "password": "sa",
+        "database": "P12R17",
+        "host": "10.0.4.3",
+        "dialect": "mssql"
+    }
+}
