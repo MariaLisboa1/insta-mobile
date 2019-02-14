@@ -5,12 +5,12 @@ import { DbConnection } from '../interfaces/DbConnectionInterface';
 
 const basename: string = path.basename(module.filename);
 
-const env: string = process.env.NODE_ENV || 'production';
+const env: string = process.env.NODE_ENV || 'test';
 let config = require(path.resolve(`${__dirname}./../config/config.json`))[env];
 let db = null;
 
 if (!db) {
-
+    
     db = {};
 
     const operatorsAliases = false;

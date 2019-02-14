@@ -1,49 +1,41 @@
-import * as express from 'express';
-import * as cors from 'cors';
-import * as bodyParser from 'body-parser';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 let swaggerJSDoc = require('swagger-jsdoc');
-
-import Routes from './routes';
-
+const routes_1 = require("./routes");
 class App {
-    public express: express.Application;
-    public swaggerSpec;
-
     constructor() {
         this.express = express();
         this.swaggerConfig();
         this.middleware();
     }
-
-    private swaggerConfig(): void {
+    swaggerConfig() {
         let swaggerDefinition = {
             info: {
                 title: 'Doc Api Intranet',
                 version: '1.0.0',
                 description: 'Documentação para facilitar o entendimento da api'
-            },                        
+            },
             host: '10.0.4.70',
             basePath: '/api',
         };
-
         let options = {
             swaggerDefinition: swaggerDefinition,
-            apis: ['./routes/comprador.route.js','./routes/index.js']
+            apis: ['./routes/comprador.route.js', './routes/index.js']
         };
-
         this.swaggerSpec = swaggerJSDoc(options);
     }
-
-    private middleware(): void {
+    middleware() {
         this.express.use(cors());
         this.express.use(bodyParser.urlencoded({ extended: true }));
         this.express.use(bodyParser.json());
-        this.express.use("/api", Routes);
+        this.express.use("/api", routes_1.default);
         this.express.get('/swagger.json', (req, res) => {
             res.setHeader('Content-Type', 'application/json');
             res.send(this.swaggerSpec);
-        })
+        });
     }
 }
-
-export default new App().express;
+exports.default = new App().express;
