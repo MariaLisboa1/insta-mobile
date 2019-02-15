@@ -4,23 +4,23 @@
         "password": "sa",
         "database": "P12R17",
         "host": "10.0.4.3",
-        "dialect": "mssql",
-        "port":3000
+        "dialect": "mssql"
+        
     },
     "production": {
         "username": "sa",
         "password": "sa",
         "database": "P12R17",
         "host": "10.0.4.3",
-        "dialect": "mssql",
-        "port":3000
+        "dialect": "mssql"
+        
     },
     "development": {
         "username": "sa",
         "password": "sa",
         "database": "P12R17",
         "host": "10.0.4.3",
-        "dialect": "mssql",
-        "port":3000
+        "dialect": "mssql"
+        
     }   
 }
